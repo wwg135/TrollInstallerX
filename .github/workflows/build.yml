@@ -46,12 +46,13 @@ jobs:
           echo -e "更新时间：${{ env.logT }}" >> release.txt
           echo -e "> - 同步官方1.0.0正式版更新，由M哥汉化编译TrollInstallerX." >> release.txt
 
-      - name: Build deb and ipa
-        run: | 
+      - name: Build ipa
+        run: |
+          chmod +x ./build.sh
           ./build.sh
           mv TrollInstallerX.tipa TrollInstallerX.ipa
 
-      - name: Release deb and ipa
+      - name: Release ipa
         uses: softprops/action-gh-release@v1
         with:
           name: TrollInstallerX_${{ env.VERSION }}
