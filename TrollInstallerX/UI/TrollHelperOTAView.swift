@@ -15,7 +15,7 @@ struct TrollHelperOTAView: View {
                     .font(.system(size: 23, weight: .semibold, design: .rounded))
                     .foregroundColor(.white)
                     .padding()
-                Text(您的设备兼容TrollHelperOTA - 这是一种100%可靠的安装方法，无需通过侧载应用程序进行安装。您可以点击此提示之外的区域来关闭，或者按下下方的按钮通过OTA进行安装。)
+                Text("您的设备兼容TrollHelperOTA - 这是一种100%可靠的安装方法，无需通过侧载应用程序进行安装。您可以点击此提示之外的区域来关闭，或者按下下方的按钮通过OTA在线进行安装。")
                     .font(.system(size: 16, weight: .regular, design: .rounded))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
@@ -28,7 +28,7 @@ struct TrollHelperOTAView: View {
                             .frame(width: 175, height: 45)
                             .foregroundColor(.white.opacity(0.2))
                             .shadow(radius: 10)
-                        Text("OTA安装")
+                        Text("在线OTA安装")
                             .font(.system(size: 16, weight: .semibold, design: .rounded))
                             .foregroundColor(.white)
                     }
