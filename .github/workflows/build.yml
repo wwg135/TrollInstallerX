@@ -3,7 +3,7 @@ name: Build and Package
 on:
   push:
     branches:
-      - main
+      - dev
   workflow_dispatch:
 
 env:
@@ -44,7 +44,7 @@ jobs:
       - name: Pre body
         run: |
           echo -e "更新时间：${{ env.logT }}" >> release.txt
-          echo -e "> - 同步官方1.0正式版更新，简体中文汉化编译TrollInstallerX." >> release.txt
+          echo -e "> - 同步官方1.0正式版更新，简体中文汉化编译 TrollInstallerX." >> release.txt
 
       - name: Build ipa
         run: |
