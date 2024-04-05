@@ -83,6 +83,8 @@ struct CreditRow: View {
 }
 
 
-#Preview {
-    CreditsView()
+struct CreditsView_Previews: PreviewProvider {
+    static var previews: some View {
+        CreditsView()
+    }
 }
