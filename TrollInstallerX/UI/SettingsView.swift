@@ -27,7 +27,7 @@ struct SettingsView: View {
                         .frame(maxHeight: 40)
                         .foregroundColor(.white.opacity(0.2))
                         .shadow(radius: 10)
-                    Text("Clear cached kernel")
+                    Text("清除内核缓存")
                         .font(.system(size: 17, weight: .semibold, design: .rounded))
                         .foregroundColor(.white)
                         .padding()
@@ -50,7 +50,7 @@ struct SettingsView: View {
             }
             VStack {
                 Toggle(isOn: $verbose, label: {
-                    Text("Verbose logging")
+                    Text("详细日志记录")
                         .font(.system(size: 17, weight: .regular, design: .rounded))
                         .foregroundColor(.white)
                 })
