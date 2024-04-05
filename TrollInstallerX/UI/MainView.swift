@@ -42,7 +42,7 @@ struct MainView: View {
                             Text("TrollInstallerX")
                                 .font(.system(size: 30, weight: .semibold, design: .rounded))
                                 .foregroundColor(.white)
-                            Text("By Alfie CG")
+                            Text("开发：Alfie CG")
                                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                                 .foregroundColor(.white.opacity(0.5))
                             Text("iOS 14.0 - 16.6.1")
@@ -82,7 +82,7 @@ struct MainView: View {
                                         }
                                     }
                                 }, label: {
-                                    Text(device.isSupported ? "Install TrollStore" : "Unsupported")
+                                    Text(device.isSupported ? "安装 TrollStore" : "不支持")
                                             .font(.system(size: 20, weight: .semibold, design: .rounded))
                                             .foregroundColor(device.isSupported ? .white : .secondary)
                                             .padding()
