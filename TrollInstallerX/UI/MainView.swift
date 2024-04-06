@@ -42,7 +42,7 @@ struct MainView: View {
                             Text("TrollInstallerX")
                                 .font(.system(size: 30, weight: .semibold, design: .rounded))
                                 .foregroundColor(.white)
-                            Text("开发：Alfie CG")
+                            Text("开发者：Alfie CG")
                                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                                 .foregroundColor(.white.opacity(0.5))
                             Text("iOS 14.0 - 16.6.1")
