@@ -220,22 +220,22 @@ func doDirectInstall(_ device: Device) async -> Bool {
     }
     
     if !cleanupPrivatePreboot() {
-        Logger.log("Failed to clean up /private/preboot", type: .error)
+        Logger.log("清除 /private/preboot 失败", type: .error)
     }
     
     if !supportsFullPhysRW {
         if !drop_root_krw(iOS14) {
-            Logger.log("Failed to drop root privileges", type: .error)
+            Logger.log("降低root权限失败", type: .error)
             return false
         }
-        Logger.log("Deinitialising kernel exploit (\(exploit.name))")
+        Logger.log("初始化内核漏洞 (\(exploit.name))")
         if !exploit.deinitialise() {
-            Logger.log("Failed to deinitialise \(exploit.name)", type: .error)
+            Logger.log("初始化 \(exploit.name) 失败", type: .error)
             return false
         }
     }
     
-    Logger.log("Successfully installed TrollStore!", type: .success)
+    Logger.log("成功安装 TrollStore", type: .success)
     return true
 }
 
@@ -325,6 +325,6 @@ func doIndirectInstall(_ device: Device) async -> Bool {
         }
     }
     
-    Logger.log("Successfully installed persistence helper!", type: .success)
+    Logger.log("成功安装持久性助手", type: .success)
     return true
 }
