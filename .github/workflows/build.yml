@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  VERSION: '1.0'
+  VERSION: '1.0.1'
 
 jobs:
   build:
@@ -55,7 +55,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: TrollInstallerX_${{ env.VERSION }}
-          tag_name: ${{ env.msT }}
+          tag_name: ${{ env.VERSION }}
           target_commitish: main
           body_path: release.txt
           latest: true
