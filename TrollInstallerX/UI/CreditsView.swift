@@ -32,7 +32,7 @@ struct CreditsView: View {
     var body: some View {
         
         VStack {
-            Text("Credits")
+            Text("鸣谢")
                 .font(.system(size: 23, weight: .semibold, design: .rounded))
                 .foregroundColor(.white)
                 .padding()
@@ -83,6 +83,8 @@ struct CreditRow: View {
 }
 
 
-#Preview {
-    CreditsView()
+struct CreditsView_Previews: PreviewProvider {
+    static var previews: some View {
+        CreditsView()
+    }
 }

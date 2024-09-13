@@ -108,7 +108,7 @@ struct LogView: View {
                 Button {
                     UIPasteboard.general.string = verbose ? stdoutString : Logger.shared.logString
                 } label: {
-                    Label("Copy to clipboard", systemImage: "doc.on.doc")
+                    Label("复制到剪贴板", systemImage: "doc.on.doc")
                 }
             }
         }

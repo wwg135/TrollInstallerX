@@ -34,18 +34,18 @@ struct InstalledApp: Hashable {
 }
 
 var persistenceHelperCandidates = [
-    InstalledApp(displayName: "Tips", bundleName: "Tips", bundleIdentifier: "com.apple.tips"),
-    InstalledApp(displayName: "Measure", bundleName: "Measure", bundleIdentifier: "com.apple.measure"),
-    InstalledApp(displayName: "Compass", bundleName: "Compass", bundleIdentifier: "com.apple.compass"),
-    InstalledApp(displayName: "Books", bundleName: "Books", bundleIdentifier: "com.apple.iBooks"),
+    InstalledApp(displayName: "提示", bundleName: "Tips", bundleIdentifier: "com.apple.tips"),
+    InstalledApp(displayName: "测距仪", bundleName: "Measure", bundleIdentifier: "com.apple.measure"),
+    InstalledApp(displayName: "指南针", bundleName: "Compass", bundleIdentifier: "com.apple.compass"),
+    InstalledApp(displayName: "图书", bundleName: "Books", bundleIdentifier: "com.apple.iBooks"),
     InstalledApp(displayName: "iTunes Store", bundleName: "MobileStore", bundleIdentifier: "com.apple.MobileStore"),
-    InstalledApp(displayName: "Translate", bundleName: "SequoiaTranslator", bundleIdentifier: "com.apple.Translate"),
-    InstalledApp(displayName: "Podcasts", bundleName: "Podcasts", bundleIdentifier: "com.apple.podcasts"),
-    InstalledApp(displayName: "Calculator", bundleName: "Calculator", bundleIdentifier: "com.apple.calculator"),
-    InstalledApp(displayName: "Wallet", bundleName: "Passbook", bundleIdentifier: "com.apple.Passbook"),
+    InstalledApp(displayName: "翻译", bundleName: "SequoiaTranslator", bundleIdentifier: "com.apple.Translate"),
+    InstalledApp(displayName: "播客", bundleName: "Podcasts", bundleIdentifier: "com.apple.podcasts"),
+    InstalledApp(displayName: "计算器", bundleName: "Calculator", bundleIdentifier: "com.apple.calculator"),
+    InstalledApp(displayName: "钱包", bundleName: "Passbook", bundleIdentifier: "com.apple.Passbook"),
     InstalledApp(displayName: "Apple TV", bundleName: "AppleTV", bundleIdentifier: "com.apple.tv"),
-    InstalledApp(displayName: "Freeform", bundleName: "Freeform", bundleIdentifier: "com.apple.freeform"),
-    InstalledApp(displayName: "Stocks", bundleName: "Stocks", bundleIdentifier: "com.apple.stocks")
+    InstalledApp(displayName: "无边记", bundleName: "Freeform", bundleIdentifier: "com.apple.freeform"),
+    InstalledApp(displayName: "股票", bundleName: "Stocks", bundleIdentifier: "com.apple.stocks")
 ]
 
 class HelperAlert: ObservableObject {
