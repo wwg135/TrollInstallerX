@@ -275,7 +275,7 @@ func doIndirectInstall(_ device: Device) async -> Bool {
         UnsafeMutablePointer<UnsafePointer<CChar>?>.init(ptr)
     }
     if is_persistence_helper_installed(pathPointer) {
-        Logger.log("持久性助手已安装！" (\(path == nil ? "unknown" : String(cString: path!)))", type: .warning)
+        Logger.log("持久性助手已安装! (\(path == nil ? "unknown" : String(cString: path!)))", type: .warning)
         return false
     }
     
