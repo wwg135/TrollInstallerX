@@ -39,21 +39,17 @@ During installation, you will have installed a persistence helper. Open your per
 
 If you selected an app for the persistence helper and it did not change, it is likely that you already have a persistence helper installed. Open TrollStore and go to settings to see which app is set to the persistence helper.
 
-> Why am I getting an error about not being able to patchfind?
+> Why am I getting an error about being unable to patchfind or being unable to download kernel?
 
 Either:
 - You're on a non-MacDirtyCow supported version, and are not connected to the internet, or;
-- You're using a Yellow iPhone 14 or Yellow iPhone 14 Plus on iOS 16.3 (20D50), in which case, [open a GitHub Issue](https://github.com/alfiecg24/TrollInstallerX/issues/new/choose).
+- You're using a Yellow iPhone 14 or Yellow iPhone 14 Plus on iOS 16.3 (20D50), in which case you should install `TrollInstallerX-20D50.ipa` from [here](https://github.com/alfiecg24/TrollInstallerX/releases/latest).
 
 Additionally, if a file exists at `/TrollInstallerX.app/kernelcache`, TrollInstallerX will use that file instead of downloading the kernelcache. This can be useful if you have a slow or unreliable internet connection, or happen to have a device and version combination that has no public kernelcache available.
 
 > Why does TrollInstallerX say "failed to install persistence helper" using the indirect method?
 
 The indirect method is not perfect, and sometimes it will fail to install the persistence helper. If this happens, simply shut down your device, turn it back on, and try again. If you repeatedly have issues with the same app, try using a different app.
-
-> Why does TrollInstallerX not support iOS 17.0?
-
-TrollInstallerX does not support iOS 17.0 because we do not have any public exploits for it. Once one releases, it will be integrated into TrollInstallerX.
 
 ## Building
 TrollInstallerX is a regular Xcode project, but the project also contains a build script. To build it and produce an IPA, simply run the `build.sh` script in the root of the project. This will build the project and produce an IPA in the root of the project.

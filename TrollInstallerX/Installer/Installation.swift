@@ -134,14 +134,12 @@ func doDirectInstall(_ device: Device) async -> Bool {
         }
         
         if device.isArm64e {
-            Logger.log("初始化 PPL 绕过 (\(dmaFail.name))")
             if !dmaFail.deinitialise() {
                 Logger.log("初始化 \(dmaFail.name) 失败", type: .error)
                 return false
             }
         }
         
-        Logger.log("初始化利用内核漏洞 (\(exploit.name))")
         if !exploit.deinitialise() {
             Logger.log("初始化 \(exploit.name) 失败", type: .error)
             return false
@@ -206,7 +204,7 @@ func doDirectInstall(_ device: Device) async -> Bool {
     
     if persistenceID != "" {
         if install_persistence_helper(persistenceID) {
-            Logger.log("成功安装持久性助手", type: .success)
+            Logger.log("成功安装持久性助手！", type: .success)
         } else {
             Logger.log("安装持久性助手失败", type: .error)
         }
@@ -216,7 +214,7 @@ func doDirectInstall(_ device: Device) async -> Bool {
     if !install_trollstore(useLocalCopy ? "/private/preboot/tmp/TrollStore.tar" : Bundle.main.bundlePath + "/TrollStore.tar") {
         Logger.log("安装 TrollStore 失败", type: .error)
     } else {
-        Logger.log("成功安装 TrollStore", type: .success)
+        Logger.log("成功安装 TrollStore！", type: .success)
     }
     
     if !cleanupPrivatePreboot() {
@@ -228,14 +226,12 @@ func doDirectInstall(_ device: Device) async -> Bool {
             Logger.log("降低root权限失败", type: .error)
             return false
         }
-        Logger.log("初始化内核漏洞 (\(exploit.name))")
         if !exploit.deinitialise() {
             Logger.log("初始化 \(exploit.name) 失败", type: .error)
             return false
         }
     }
     
-    Logger.log("成功安装 TrollStore", type: .success)
     return true
 }
 
@@ -267,7 +263,6 @@ func doIndirectInstall(_ device: Device) async -> Bool {
         return false
     }
     defer {
-        Logger.log("初始化内核 (\(exploit.name)) 漏洞")
         if !exploit.deinitialise() {
             Logger.log("初始化 \(exploit.name) 失败", type: .error)
         }
@@ -275,8 +270,12 @@ func doIndirectInstall(_ device: Device) async -> Bool {
     Logger.log("成功利用内核", type: .success)
     post_kernel_exploit(false)
     
-    if is_persistence_helper_installed() {
-        Logger.log("持久性助手已安装")
+    var path: UnsafePointer<CChar>? = nil
+    let pathPointer = withUnsafeMutablePointer(to: &path) { ptr in
+        UnsafeMutablePointer<UnsafePointer<CChar>?>.init(ptr)
+    }
+    if is_persistence_helper_installed(pathPointer) {
+        Logger.log("持久性助手已安装！" (\(path == nil ? "unknown" : String(cString: path!)))", type: .warning)
         return false
     }
     
@@ -325,6 +324,5 @@ func doIndirectInstall(_ device: Device) async -> Bool {
         }
     }
     
-    Logger.log("成功安装持久性助手", type: .success)
     return true
 }
